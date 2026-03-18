@@ -44,7 +44,7 @@ public:
             seq3di[i] = subMat3Di.num2aa[state3di];
             seq12st[i] = subMat12St.num2aa[state12st];
         }
-        mask12StByDVP(seq3di.data(), seq12st.data(), len);
+        //mask12StByDVP(seq3di.data(), seq12st.data(), len);
     }
 
     static std::string getIndexWithSuffix(std::string db, const std::string &suffix) {
