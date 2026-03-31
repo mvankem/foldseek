@@ -155,6 +155,8 @@ LocalParameters::LocalParameters() :
     structurerescorediagonal.push_back(&PARAM_TMSCORE_THRESHOLD_MODE);
     structurerescorediagonal.push_back(&PARAM_LDDT_THRESHOLD);
     structurerescorediagonal.push_back(&PARAM_ALIGNMENT_TYPE);
+    structurerescorediagonal.push_back(&PARAM_SS_12ST);
+    structurerescorediagonal.push_back(&PARAM_SUBMAT_12ST_SCALE);
     structurerescorediagonal = combineList(structurerescorediagonal, align);
 
     structurealign.push_back(&PARAM_TMSCORE_THRESHOLD);
@@ -164,6 +166,7 @@ LocalParameters::LocalParameters() :
     structurealign.push_back(&PARAM_ALIGNMENT_TYPE);
     structurealign.push_back(&PARAM_EXACT_TMSCORE);
     structurealign.push_back(&PARAM_SUBMAT_12ST_SCALE);
+    structurealign.push_back(&PARAM_SS_12ST);
     structurealign = combineList(structurealign, align);
 
     // strucclust
@@ -374,8 +377,8 @@ LocalParameters::LocalParameters() :
     // 12st substitution matrix scale
     submat12stScale = 2.1;
 
-    // include 12-state alphabet in _ss database
-    ss12st = 0;
+    // include 12-state alphabet in _ss database and use for scoring
+    ss12st = 1;
 
     citations.emplace(CITATION_FOLDSEEK, "van Kempen, M., Kim, S.S., Tumescheit, C., Mirdita, M., Lee, J., Gilchrist, C.L.M., Söding, J., and Steinegger, M. Fast and accurate protein structure search with Foldseek. Nature Biotechnology, doi:10.1038/s41587-023-01773-0 (2023)");
     citations.emplace(CITATION_FOLDSEEK_MULTIMER, "Kim, W., Mirdita, M., Levy Karin, E., Gilchrist, C.L.M., Schweke, H., Söding, J., Levy, E., and Steinegger, M. Rapid and sensitive protein complex alignment with Foldseek-Multimer. Nature Methods, doi:10.1038/s41592-025-02593-7 (2025)");
